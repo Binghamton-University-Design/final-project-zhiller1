@@ -8,36 +8,54 @@
 		<meta name="description" content="This is my digital story project.">
 		<meta name="author" content="Zachary Hiller">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Question 1</title>
+		<title>Question 3</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:ital@0;1&display=swap" rel="stylesheet">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script>
+
+			function getQueryStringParameters(){ 
+
+			    var url = window.location.href;
+			    var query_string_paramter = url.split("?")[1]; 
+
+			 return query_string_paramter;
+			}
+			
+		</script>
+
 	</head>
 
 	<body>
 		<div id="wrapper">
 				<div class="grid">
 					<div class="width-12-12-m width12-12 project">
-						<div class="project-inner">
-							<div class="question">Is it mandatory to use raisins in the recipe?</div>
-							<a class="yes-q" href="question-2.html?q1=0"></a>
-							<a class="no-q" href="question-2.html?q1=1"></a>
-							<img src="images/QUESTION 1-01.png"></div>
+						<div class="project-inner" id="project-inner">
+							<div class="question">We need ricotta cheese to make cheese pancakes, right?</div>
+							<a class="yes-q" href="question-4.html?q3=0"></a>
+							<a class="no-q" href="question-4.html?q3=1"></a>
+							<img src="images/QUESTION 3-01.png"></div>
 					</div>
 			</div>
 		</div>
 	</body>
 
+<script>
 
-	<script>
+	var a = document.getElementById('project-inner').getElementsByTagName('a'),
+    length = a.length;
 
-		$(".yes-q").click(function(){
+	for(var i=0; i< length; i++){
+	  a[i].href += '&'+getQueryStringParameters();
+	}
+
+	$(".yes-q").click(function(){
 			var h = $(this).attr("href");
   		event.preventDefault();
       event.stopPropagation();
       $( ".question, yes-q, no-q" ).hide();
-      var oldSrc = 'images/QUESTION 1-01.png';
+      var oldSrc = 'images/QUESTION 3-01.png';
 			var newSrc = 'images/WRONG-01.png';
 			$('img[src="' + oldSrc + '"]').attr('src', newSrc);
 			window.setTimeout(function () {
@@ -50,7 +68,7 @@
   		event.preventDefault();
       event.stopPropagation();
       $( ".question, yes-q, no-q" ).hide();
-      var oldSrc = 'images/QUESTION 1-01.png';
+      var oldSrc = 'images/QUESTION 3-01.png';
 			var newSrc = 'images/CORRECT-01.png';
 			$('img[src="' + oldSrc + '"]').attr('src', newSrc);
 			window.setTimeout(function () {
@@ -58,6 +76,6 @@
       }, 2000);
 		});
 
-	</script>
+</script>
 
 </html>

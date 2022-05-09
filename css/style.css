@@ -1,4 +1,4 @@
-/stylesheet*/
+/*stylesheet*/
 
 /* vars */
 :root {
@@ -65,4 +65,36 @@ body {
 	height: 20%;
 	bottom: 5%;
 	left: 76%;
+}
+
+.countdown {
+	font-size: 2em;
+	position: absolute;
+	bottom: 1rem;
+	right:  1rem;
+	font-family: 'Roboto Mono', monospace;
+}
+
+.question {
+	width: 37%;
+	position: absolute;
+	top: 30%;
+	left:  43%;
+	font-family: 'Roboto', sans-serif;
+}
+
+.yes-q {
+	position: absolute;
+	width: 22%;
+	height: 18%;
+	top: 2%;
+	left: 12%;
+}
+
+.no-q {
+	position: absolute;
+	width: 22%;
+	height: 18%;
+	bottom: 2%;
+	right: 1%;
 }
